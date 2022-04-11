@@ -20,6 +20,8 @@ wss.on('connection', function connection(ws) {
 });
 
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/new-relic-notify', (req, res) => {
+    ws.send(req.body);
+});
 
 server.listen(3000, () => console.log('Listening on Port: 3000'))
