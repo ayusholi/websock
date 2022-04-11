@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS</title>
+</head>
+
+<body>
+    <h1>AWS</h1>
+    <hr>
+    <button onclick="sendMessage()">Trigger Notification</button>
+
+</body>
+<script>
+    // Create a Websocket Connection
+    const socket = new WebSocket('ws://localhost:3000');
+
+    // Connection Opened
+    socket.addEventListener('open', function(event) {
+        console.log('Connected to WS Server');
+    });
+
+    // Listen for messages
+    socket.addEventListener('message', function(event) {
+        console.log('Message from server ', event.data);
+    });
+
+    const sendMessage = () => {
+        const data = {
+            error: "500",
+            message: "Internal Server Error",
+            exception: "Something went wrong at the server",
+        };
+
+        const message = "500 | Internal Server Error";
+        socket.send(message);
+    }
+</script>
+
+</html>
