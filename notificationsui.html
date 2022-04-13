@@ -27,7 +27,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"></script>
 <script>
     // Create a Websocket Connection
-    const socket = new WebSocket('ws://localhost:8081/');
+    const socket = new WebSocket('ws://94.237.98.143:3000/');
 
     // Connection Opened
     socket.addEventListener('open', function(event) {
@@ -39,9 +39,11 @@
         let data = JSON.parse(event.data);
         // console.log('Message from server:', data);
         console.log("Availability");
-        console.log(data);
+        let responsedata = JSON.parse(data);
+        let results = responsedata.data.actor.account.nrql.results[0];
+        console.log(results)
         let notifications = document.getElementById("notifications");
-        notifications.innerHTML += "<div class='alert alert-danger'>" + data + "<br>";
+        notifications.innerHTML += "<div class='alert alert-danger'>" + JSON.stringify(results) + "<br>";
     });
 </script>
 
