@@ -18,6 +18,9 @@
     Notifications
     <br>
     <div class="container">
+        <div id="oldNotifications">
+
+        </div>
         <div id="notifications">
 
         </div>
@@ -26,8 +29,30 @@
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"></script>
 <script>
+    function readTextFile(file, callback) {
+        var rawFile = new XMLHttpRequest();
+        rawFile.overrideMimeType("application/json");
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function() {
+            if (rawFile.readyState === 4 && rawFile.status == "200") {
+                callback(rawFile.responseText);
+            }
+        }
+        rawFile.send(null);
+    }
+
+    //usage:
+    readTextFile("/data.json", function(text) {
+        savedData = JSON.parse(text);
+        let notifications = document.getElementById("notifications");
+        console.log(savedData);
+        for (let i = 0; i < savedData.length; i++) {
+            notifications.innerHTML += "<div class='alert alert-danger'>" + JSON.stringify(savedData[i]) + "<br>";
+        }
+    });
+
     // Create a Websocket Connection
-    const socket = new WebSocket('ws://94.237.98.143:3000/');
+    const socket = new WebSocket('ws://localhost:8081');
 
     // Connection Opened
     socket.addEventListener('open', function(event) {

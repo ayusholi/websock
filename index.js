@@ -19,8 +19,6 @@ wss.on('connection', function connection(ws) {
     console.log("A new Client Connected");
     // ws.send('Welcome New Client');
     ws.on('message', function incoming(message, isBinary) {
-        console.log('received: %s', message);
-
         wss.clients.forEach(function each(client) {
             if (client !== ws && client.readyState === WebSocket.OPEN) {
                 client.send(message, { binary: isBinary })
@@ -31,7 +29,7 @@ wss.on('connection', function connection(ws) {
 
 
 app.get('/new-relic-notify', (req, res) => {
-    console.log(req.query);
+    // console.log(req.query);
     // Broadcast URL to connected ws clients
     wss.clients.forEach((client) => {
         // Check that connect are open and still alive to avoid socket error
@@ -43,9 +41,28 @@ app.get('/new-relic-notify', (req, res) => {
                     return
                 }
                 requestdata = data.toString();
-                // let response = req.query;
-                let response = requestdata;
-                client.send(JSON.stringify(response));
+                let strResponse = JSON.parse(requestdata);
+                let results = strResponse.data.actor.account.nrql.results[0];
+                console.log(results);
+                var element = JSON.stringify(results);
+
+                const readData = fs.readFileSync('./data.json', { encoding: 'utf8', flag: 'r' });
+                // console.log(readData);
+
+                var array = JSON.parse(readData);
+                array.push(JSON.parse(element));
+                // array.push(results);
+
+                let saveData = JSON.stringify(array, null, 2);
+                fs.writeFile("./data.json", saveData, 'utf8', function(err) {
+                    if (err) {
+                        console.log("An error occured while writing JSON Object to File.");
+                        return console.log(err);
+                    }
+
+                    console.log("JSON file has been saved.");
+                });
+                client.send(requestdata);
             });
         }
     });
