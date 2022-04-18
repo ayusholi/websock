@@ -1,1 +1,15 @@
-[{"beginTimeSeconds":1649770495,"endTimeSeconds":1649770555,"facet":"user-mgmt-bff-qa-a-tg","count.provider.httpCodeTarget5XXCount.Sum":0,"provider.targetGroupName":"user-mgmt-bff-qa-a-tg"},{"beginTimeSeconds":1649770495,"endTimeSeconds":1649770555,"facet":"user-mgmt-bff-qa-a-tg","count.provider.httpCodeTarget5XXCount.Sum":1,"provider.targetGroupName":"user-mgmt-bff-qa-a-tg"},{"beginTimeSeconds":1649770495,"endTimeSeconds":1649770555,"facet":"user-mgmt-bff-qa-a-tg","count.provider.httpCodeTarget5XXCount.Sum":1,"provider.targetGroupName":"user-mgmt-bff-qa-a-tg"},{"beginTimeSeconds":1649770495,"endTimeSeconds":1649770555,"facet":"user-mgmt-bff-qa-a-tg","count.provider.httpCodeTarget5XXCount.Sum":1,"provider.targetGroupName":"user-mgmt-bff-qa-a-tg"},{"beginTimeSeconds":1649770495,"endTimeSeconds":1649770555,"facet":"user-mgmt-bff-qa-a-tg","count.provider.httpCodeTarget5XXCount.Sum":1,"provider.targetGroupName":"user-mgmt-bff-qa-a-tg"},{"beginTimeSeconds":1649770495,"endTimeSeconds":1649770555,"facet":"user-mgmt-bff-qa-a-tg","count.provider.httpCodeTarget5XXCount.Sum":1,"provider.targetGroupName":"user-mgmt-bff-qa-a-tg"},{"beginTimeSeconds":1649770495,"endTimeSeconds":1649770555,"facet":"user-mgmt-bff-qa-a-tg","count.provider.httpCodeTarget5XXCount.Sum":1,"provider.targetGroupName":"user-mgmt-bff-qa-a-tg"},{"beginTimeSeconds":1649770495,"endTimeSeconds":1649770555,"facet":"user-mgmt-bff-qa-a-tg","count.provider.httpCodeTarget5XXCount.Sum":1,"provider.targetGroupName":"user-mgmt-bff-qa-a-tg"},{"beginTimeSeconds":1649770495,"endTimeSeconds":1649770555,"facet":"user-mgmt-bff-qa-a-tg","count.provider.httpCodeTarget5XXCount.Sum":1,"provider.targetGroupName":"user-mgmt-bff-qa-a-tg"},{"beginTimeSeconds":1649770495,"endTimeSeconds":1649770555,"facet":"user-mgmt-bff-qa-a-tg","count.provider.httpCodeTarget5XXCount.Sum":1,"provider.targetGroupName":"user-mgmt-bff-qa-a-tg"},{"beginTimeSeconds":1649770495,"endTimeSeconds":1649770555,"facet":"user-mgmt-bff-qa-a-tg","count.provider.httpCodeTarget5XXCount.Sum":1,"provider.targetGroupName":"user-mgmt-bff-qa-a-tg"},{"beginTimeSeconds":1649770495,"endTimeSeconds":1649770555,"facet":"user-mgmt-bff-qa-a-tg","count.provider.httpCodeTarget5XXCount.Sum":1,"provider.targetGroupName":"user-mgmt-bff-qa-a-tg"},{"beginTimeSeconds":1649770495,"endTimeSeconds":1649770555,"facet":"user-mgmt-bff-qa-a-tg","count.provider.httpCodeTarget5XXCount.Sum":1,"provider.targetGroupName":"user-mgmt-bff-qa-a-tg"},{"beginTimeSeconds":1649770495,"endTimeSeconds":1649770555,"facet":"user-mgmt-bff-qa-a-tg","count.provider.httpCodeTarget5XXCount.Sum":1,"provider.targetGroupName":"user-mgmt-bff-qa-a-tg"}]
+[{
+        "beginTimeSeconds": 1649770495,
+        "endTimeSeconds": 1649770555,
+        "facet": "user-mgmt-bff-qa-a-tg",
+        "count.provider.httpCodeTarget5XXCount.Sum": 0,
+        "provider.targetGroupName": "user-mgmt-bff-qa-a-tg"
+    },
+    {
+        "beginTimeSeconds": 1649770495,
+        "endTimeSeconds": 1649770555,
+        "facet": "user-mgmt-bff-qa-a-tg",
+        "count.provider.httpCodeTarget5XXCount.Sum": 1,
+        "provider.targetGroupName": "user-mgmt-bff-qa-a-tg"
+    }
+]

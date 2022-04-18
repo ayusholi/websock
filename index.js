@@ -46,6 +46,7 @@ app.get('/new-relic-notify', (req, res) => {
                 console.log(results);
                 var element = JSON.stringify(results);
 
+                // const readData = fs.readFileSync('data.json', { encoding: 'utf8', flag: 'r' });
                 const readData = fs.readFileSync('/var/www/html/data.json', { encoding: 'utf8', flag: 'r' });
                 // console.log(readData);
 
@@ -53,6 +54,7 @@ app.get('/new-relic-notify', (req, res) => {
                 array.push(JSON.parse(element));
 
                 let saveData = JSON.stringify(array);
+                fs.writeFileSync("data.json", saveData, 'utf8');
                 fs.writeFileSync("/var/www/html/data.json", saveData, 'utf8');
                 client.send(JSON.stringify(strResponse));
             });

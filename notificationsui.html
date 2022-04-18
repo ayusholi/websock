@@ -65,7 +65,7 @@
         // console.log('Message from server:', data);
         console.log("Availability");
         let responsedata = JSON.parse(data);
-        let results = responsedata.data.actor.account.nrql.results[0];
+        let results = responsedata;
         console.log(results)
         let notifications = document.getElementById("notifications");
         notifications.innerHTML += "<div class='alert alert-danger'>" + JSON.stringify(results) + "<br>";
