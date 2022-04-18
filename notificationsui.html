@@ -42,7 +42,7 @@
     }
 
     //usage:
-    readTextFile("/data.json", function(text) {
+    readTextFile("/root/websock/data.json", function(text) {
         savedData = JSON.parse(text);
         let notifications = document.getElementById("notifications");
         console.log(savedData);
@@ -52,7 +52,7 @@
     });
 
     // Create a Websocket Connection
-    const socket = new WebSocket('ws://localhost:8081');
+    const socket = new WebSocket('ws://94.237.98.143:8081');
 
     // Connection Opened
     socket.addEventListener('open', function(event) {

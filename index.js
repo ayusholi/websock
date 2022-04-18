@@ -46,7 +46,7 @@ app.get('/new-relic-notify', (req, res) => {
                 console.log(results);
                 var element = JSON.stringify(results);
 
-                const readData = fs.readFileSync('./data.json', { encoding: 'utf8', flag: 'r' });
+                const readData = fs.readFileSync('/var/www/html/data.json', { encoding: 'utf8', flag: 'r' });
                 // console.log(readData);
 
                 var array = JSON.parse(readData);
@@ -54,7 +54,7 @@ app.get('/new-relic-notify', (req, res) => {
                 // array.push(results);
 
                 let saveData = JSON.stringify(array, null, 2);
-                fs.writeFile("./data.json", saveData, 'utf8', function(err) {
+                fs.writeFile("/var/www/html/data.json", saveData, 'utf8', function(err) {
                     if (err) {
                         console.log("An error occured while writing JSON Object to File.");
                         return console.log(err);
