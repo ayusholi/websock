@@ -51,17 +51,9 @@ app.get('/new-relic-notify', (req, res) => {
 
                 var array = JSON.parse(readData);
                 array.push(JSON.parse(element));
-                // array.push(results);
 
-                let saveData = JSON.stringify(array, null, 2);
-                fs.writeFile("/var/www/html/data.json", saveData, 'utf8', function(err) {
-                    if (err) {
-                        console.log("An error occured while writing JSON Object to File.");
-                        return console.log(err);
-                    }
-
-                    console.log("JSON file has been saved.");
-                });
+                let saveData = JSON.stringify(array);
+                fs.writeFileSync("/var/www/html/data.json", saveData, 'utf8');
                 client.send(JSON.stringify(strResponse));
             });
         }
