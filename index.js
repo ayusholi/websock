@@ -62,7 +62,7 @@ app.get('/new-relic-notify', (req, res) => {
 
                     console.log("JSON file has been saved.");
                 });
-                client.send(requestdata);
+                client.send(element);
             });
         }
     });
