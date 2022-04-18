@@ -54,7 +54,7 @@ app.get('/new-relic-notify', (req, res) => {
                 array.push(JSON.parse(element));
 
                 let saveData = JSON.stringify(array);
-                fs.writeFileSync("data.json", saveData, 'utf8');
+                // fs.writeFileSync("data.json", saveData, 'utf8');
                 fs.writeFileSync("/var/www/html/data.json", saveData, 'utf8');
                 client.send(element);
             });
